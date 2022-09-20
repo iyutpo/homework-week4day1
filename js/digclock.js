@@ -1,17 +1,31 @@
-function addCampImages() {
-    var filenames = [];
-    var openList = "<li class='partner'>";
-    var closeList = "</li>";
-    var image;
-    var images = ['partner-bustour', 'partner-cabinrental', 'partner-campingadv',
-            'partner-collegetours', 'partner-rentalbike', 'partner-tourgroup'];
-    var imageList = [];
-    for (var i = 0; i < images.length; i++) {
-        filenames.push("<img src='./images/partners/" + images[i] + ".png'>");
-        image = openList + filenames[i] + closeList;
-        imageList.push(image);
+function currentTime() {
+    var d = new Date();
+    var hr = d.getHours();
+    var min = d.getMinutes();
+    var sec = d.getSeconds();
+    var ampm;
+    var utchr = d.getUTCHours();
+    var timeDiff;
+    var adjTimeDiff;
+    var timeZone = d.toLocaleTimeString('en-us', {timeZoneName: 'short'}).split(' ')[2];
+
+    if (sec < 10) {
+        sec = "0" + sec;
     }
-    console.log(imageList);
-    document.getElementById('partners').innerHTML = imageList.join(' ');
+    if (min < 10) {
+        min = "0" + min;
+    }
+    if (hr == 12) {
+        ampm = "PM";
+    } else if (hr > 12) {
+        hr -= 12;
+        ampm = "PM";
+    } else {
+        ampm = "AM";
+    }
+    var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timeZone[0] + timeZone[2];
+    document.getElementById('clock').innerText = time;
+    // Run time data function every second
+    setInterval(currentTime, 1000);
 }
-addCampImages();
+currentTime();

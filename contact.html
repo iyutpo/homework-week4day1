@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- Random Codes -->
-                <div class="raondomcode">
+                <div class="randomcode">
                     <input type="text" name="randomcode" placeholder="Enter characters">
                     <p id="codes"></p>
                 </div>
@@ -115,25 +115,9 @@
             </div>
         </footer>
 
-        <script>
-            function addCampImages() {
-                var filenames = [];
-                var openList = "<li class='partner'>";
-                var closeList = "</li>";
-                var image;
-                var images = ['partner-bustour', 'partner-cabinrental', 'partner-campingadv',
-                        'partner-collegetours', 'partner-rentalbike', 'partner-tourgroup'];
-                var imageList = [];
-                for (var i = 0; i < images.length; i++) {
-                    filenames.push("<img src='./images/partners/" + images[i] + ".png'>");
-                    image = openList + filenames[i] + closeList;
-                    imageList.push(image);
-                }
-                console.log(imageList);
-                document.getElementById('partners').innerHTML = imageList;
-            }
-            addCampImages();
-
-        </script>
+        <!-- PARTNERS -->
+        <script src="js/site_scripts.js"></script>
+        <script src="js/randomcodes.js"></script>
+        
     </body>
 </html>
