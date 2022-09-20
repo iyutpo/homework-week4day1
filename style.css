@@ -174,11 +174,17 @@ form .button {
     height: 50px;
     color: lightgrey;
 }
+p#codes {
+    background-color: #a19c9c;
+    width: 5em;
+    text-align: center;
+}
 form .button input {
     width: 8en;
     height: 2.5em;
     font-size: 1.2em;
     font-weight: bold;
+    /* background-color: #4977d1; */
     color: #ffffff;
     border: none;
 }
